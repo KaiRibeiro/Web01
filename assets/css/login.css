@@ -1,9 +1,19 @@
 /*
-Azul Marinho Escuro: #0C0032
-Azul Marinho: #190061
-Azul: #240090
-Azul Claro: #3500D3
-Cinza: #282828
+Paleta de Cores
+
+
+Outer Space
+#1f302e
+
+Regent Gray
+#7b949e
+
+Sirocco
+#778584
+
+Smalt Blue
+#4c8582
+
 */
 
 
@@ -13,6 +23,7 @@ Cinza: #282828
 html,
 body {
   height: 100%;
+  background-color: #1f302e;
 }
 
 body {
@@ -64,13 +75,13 @@ main h1 {
     margin: auto;
     text-align: center;
     color: white;
-    -webkit-text-stroke: 2px BLUE;
+    -webkit-text-stroke: 2px #778584;
     font-family: 'Chakra Petch' !important;
 }
-
+    
 main h1 span {
     font-size: larger;
-    -webkit-text-stroke: 2px blue;
+    -webkit-text-stroke: 2px #4C8582;
 }
 
 main p {
