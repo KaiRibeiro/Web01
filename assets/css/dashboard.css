@@ -1,20 +1,187 @@
-/*
-Paleta de Cores
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap');
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
 
 
-Outer Space
-#1f302e
+header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
 
-Regent Gray
-#7b949e
+.area_esquerda h3 {
+    font-family: 'Chakra Petch' !important;
+    color: white;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 900;
+    display: inline;
+    margin-left: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
 
-Sirocco
-#778584
+}
 
-Smalt Blue
-#4c8582
+.area_esquerda span {
+    color: red;
+    text-transform: uppercase;
+}
 
-*/
+.btnSair {
+    padding: 5px;
+    background: red;
+    text-decoration: none !important;
+    float: right;
+    margin-top: -45px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white !important;
+    text-transform: uppercase;
+    font-family: 'Chakra Petch' !important;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.btnSair:hover {
+    background-color: rgb(184, 15, 15);
+}
+
+.container_imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    z-index: 1;
+    top: 0;
+    background: rgb(48, 47, 47);
+    margin-top: 64px;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    transition: 0.5s;
+    transition-property: left;
+    overflow-y: auto;
+}
+
+.sidebar .container_imagem .imgPerfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.sidebar .container_imagem h4 {
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    font-size: 20px;
+}
+
+.sidebar a:hover {
+    background: red;
+}
+
+.sidebar i {
+    padding: 10px;
+    font-size: 30px;
+}
+
+label #btnSidebarMenu {
+    z-index: 1;
+    color: white;
+    position: fixed;
+    cursor: pointer;
+    left: 6px;
+    font-size: 30px;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+label #btnSidebarMenu:hover {
+    color: red;
+}
+
+#btnMenu:checked ~ .sidebar {
+    left: -185px;
+}
+
+#btnMenu:checked ~ .sidebar a span{
+    display: none;
+}
+
+#btnMenu:checked ~ .sidebar a{
+    font-size: 20px;
+    margin-left: 150px;
+    width: 100px;
+}
+
+.conteudo {
+    background: url('/assets/img/login_back.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-left: 250px;
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+
+}
+
+.card {
+    margin-bottom: 2%;
+}
+
+.cardsHosts {
+    margin: 2%;
+}
+
+.cardsRelatorios {
+    margin: 2%;
+}
+
+#btnMenu:checked ~ .conteudo{
+    margin-left: 60px;
+}
+
+#btnMenu:checked ~ .sidebar .container_imagem{
+    display: none;
+}
 
 
-  
+#btnMenu {
+    display: none;
+}

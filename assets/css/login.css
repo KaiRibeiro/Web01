@@ -75,13 +75,13 @@ main h1 {
     margin: auto;
     text-align: center;
     color: white;
-    -webkit-text-stroke: 2px #778584;
     font-family: 'Chakra Petch' !important;
 }
     
 main h1 span {
+  color: red;
     font-size: larger;
-    -webkit-text-stroke: 2px #4C8582;
+    text-transform: uppercase;
 }
 
 main p {
