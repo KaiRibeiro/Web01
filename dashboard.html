@@ -15,15 +15,19 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
     <link href="./assets/css/dashboard.css" type="text/css" rel="stylesheet" />
     <title>pwnWatcher</title>
   </head>
 
-
-    <input type="checkbox" id="btnMenu">
+  <body>
+    <input type="checkbox" id="btnMenu" />
     <!---Headeeeer------>
     <header class="bg-dark border border-danger">
+      <h4 class="position-absolute top-50 start-50 translate-middle text-white">Dashboard</h3>
       <label for="btnMenu">
         <i class="bi bi-list" id="btnSidebarMenu"></i>
       </label>
@@ -40,75 +44,121 @@
     <div class="sidebar border border-danger">
       <!--Pegar do Banco depois-->
       <div class="container_imagem">
-        <img src="./assets/img/usuario.jpg" class="imgPerfil" alt="Foto de perfil do Usuário">
+        <img
+          src="./assets/img/usuario.jpg"
+          class="imgPerfil"
+          alt="Foto de perfil do Usuário"
+        />
         <h4>Kaique C.</h4>
       </div>
-      <a href="./dashboard.html"><i class="bi bi-columns"></i><span>Dashboard</span></a>
+      <a href="./dashboard.html"
+        ><i class="bi bi-columns"></i><span>Dashboard</span></a
+      >
       <a href=""><i class="bi bi-laptop"></i><span>Hosts</span></a>
       <a href=""><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
-      <a href=""><i class="bi bi-envelope"></i><span>Contato</span></a>
+      <a href="./contato.html"
+        ><i class="bi bi-envelope"></i><span>Contato</span></a
+      >
     </div>
     <!--Sidebar-->
 
     <!--Cards do dashboard, pegar quantidade banco-->
     <div class="conteudo">
-
       <div class="cardsHosts">
-        <div class="card text-center text-white bg-dark">
+        <div class="card text-center">
           <div class="card-header h2">Hosts</div>
           <div class="card-body">
             <h4>Total</h4>
-            <h5 class="text-info">34</h5>
-            <hr>
+            <h5 class="text-primary">34</h5>
+            <hr />
             <h4>Abertos</h4>
             <div>
               <div class="progress">
-                  <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="34"></div>
+                <div
+                  class="progress-bar bg-danger"
+                  role="progressbar"
+                  style="width: 35%"
+                  aria-valuenow="12"
+                  aria-valuemin="0"
+                  aria-valuemax="34"
+                ></div>
               </div>
-              <div> <span class="text1">12 <span class="text2">de 34 hosts</span></span> </div>
-              <hr>
-          </div>
-          <h4>Finalizados</h4>
-          <div>
-            <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 64%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="34"></div>
+              <div>
+                <span class="text1"
+                  >12 <span class="text2">de 34 hosts</span></span
+                >
+              </div>
+              <hr />
             </div>
-            <div class="mt-3"> <span class="text1">22 <span class="text2">de 34 hosts</span></span> </div>
-        </div>
+            <h4>Finalizados</h4>
+            <div>
+              <div class="progress">
+                <div
+                  class="progress-bar bg-success"
+                  role="progressbar"
+                  style="width: 64%"
+                  aria-valuenow="12"
+                  aria-valuemin="0"
+                  aria-valuemax="34"
+                ></div>
+              </div>
+              <div class="mt-3">
+                <span class="text1"
+                  >22 <span class="text2">de 34 hosts</span></span
+                >
+              </div>
+            </div>
           </div>
         </div>
-          
       </div>
 
-      
       <div class="cardsRelatorios">
-        <div class="card text-center text-white bg-danger">
+        <div class="card text-center">
           <div class="card-header h2">Relatórios</div>
           <div class="card-body">
             <h4>Total</h4>
-            <h5 class="text-info">22</h5>
-            <hr>
+            <h5 class="text-primary">22</h5>
+            <hr />
             <h4>Em Andamento</h4>
             <div>
               <div class="progress">
-                  <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="22"></div>
+                <div
+                  class="progress-bar bg-warning"
+                  role="progressbar"
+                  style="width: 40%"
+                  aria-valuenow="9"
+                  aria-valuemin="0"
+                  aria-valuemax="22"
+                ></div>
               </div>
-              <div> <span class="text1">9 <span class="text2">de 22 relatórios</span></span> </div>
-              <hr>
-          </div>
-          <h4>Finalizados</h4>
-          <div>
-            <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="34"></div>
+              <div>
+                <span class="text1"
+                  >9 <span class="text2">de 22 relatórios</span></span
+                >
+              </div>
+              <hr />
             </div>
-            <div class="mt-3"> <span class="text1">13 <span class="text2">de 22 relatórios</span></span> </div>
-        </div>
+            <h4>Finalizados</h4>
+            <div>
+              <div class="progress">
+                <div
+                  class="progress-bar bg-success"
+                  role="progressbar"
+                  style="width: 50%"
+                  aria-valuenow="12"
+                  aria-valuemin="0"
+                  aria-valuemax="34"
+                ></div>
+              </div>
+              <div class="mt-3">
+                <span class="text1"
+                  >13 <span class="text2">de 22 relatórios</span></span
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      
-
-
+    </div>
   </body>
 </html>
