@@ -152,8 +152,20 @@ label #btnSidebarMenu:hover {
   height: 100%;
   transition: 0.5s;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.grid {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
 }
 
 #btnMenu:checked ~ .conteudo {
@@ -168,44 +180,6 @@ label #btnSidebarMenu:hover {
   display: none;
 }
 
-.formContato {
-    width: 40%;
-    height: 60%;
-    text-align: center;
-    overflow: auto;
-    background: url("/assets/img/contacto_back.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.formContato button {
-  background: red;
-}
-
-.formContato h2 {
-  font-family: "Chakra Petch" !important;
-}
-
-.infoContato {
-  height: 65%;
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: auto;
-}
-
-.infoContato i {
-  padding: 10px;
-  font-size: 30px;
-}
-
-
-
-
-.titleContato {
-  font-family: "Chakra Petch" !important;
-
+.card-img-top {
+    height: 20vh;
 }

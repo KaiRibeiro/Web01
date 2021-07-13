@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link href="./assets/css/hosts.css" type="text/css" rel="stylesheet" />
+    <title>pwnWatcher</title>
+  </head>
+  <body>
+    <input type="checkbox" id="btnMenu" />
+    <!---Headeeeer------>
+    <header class="bg-dark border border-danger">
+      <h4 class="position-absolute top-50 start-50 translate-middle text-white">Hosts</h3>
+      <label for="btnMenu">
+        <i class="bi bi-list" id="btnSidebarMenu"></i>
+      </label>
+      <div class="area_esquerda">
+        <h3 class="h1 mb-3 fw-bold">pwn<span>Watcher</span></h3>
+      </div>
+      <div class="area_direita">
+        <a href="./login.html" class="btnSair">Sair</a>
+      </div>
+    </header>
+    <!---Headeeeer------>
+
+    <!--Sidebar-->
+    <div class="sidebar border border-danger">
+      <!--Pegar do Banco depois-->
+      <div class="container_imagem">
+        <img
+          src="./assets/img/usuario.jpg"
+          class="imgPerfil"
+          alt="Foto de perfil do Usuário"
+        />
+        <h4>Kaique C.</h4>
+      </div>
+      <a href="./dashboard.html"
+        ><i class="bi bi-columns"></i><span>Dashboard</span></a
+      >
+      <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
+      <a href=""><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
+      <a href="./contato.html"
+        ><i class="bi bi-envelope"></i><span>Contato</span></a
+      >
+    </div>
+    <!--Sidebar-->
+
+
+    <div class="conteudo">
+            <div class="grid">
+
+
+                <div class="card">
+                    <img class="card-img-top" src="./assets/img/linux.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">27.64.211.59</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/windows.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">115.179.177.213</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/freebsd.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">91.215.234.102</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/hts.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">HackThisSite</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/htb.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Hack The Box</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/schooled.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Schooled HTB</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/offsec.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Offensive Security</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <img class="card-img-top" src="./assets/img/thm.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">TryHackMe</h5>
+                      <p class="card-text">This is a wider card with supporting text</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+
+
+            </div>
+
+    </div>
+
+
+
+  </body>
 </html>
