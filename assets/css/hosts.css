@@ -151,21 +151,12 @@ label #btnSidebarMenu:hover {
   margin-left: 250px;
   height: 100%;
   transition: 0.5s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
-.grid {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    justify-content: center;
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
+.table-responsive-sm {
+  padding-top: 5%;
+  width: 100%
 }
 
 #btnMenu:checked ~ .conteudo {
@@ -180,6 +171,7 @@ label #btnSidebarMenu:hover {
   display: none;
 }
 
-.card-img-top {
-    height: 20vh;
+.active a{
+  background: red !important;
 }
+
