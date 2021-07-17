@@ -51,7 +51,7 @@ header {
 }
 
 .btnSair:hover {
-  background-color: rgb(184, 15, 15);
+  background: rgb(128, 11, 11);
 }
 
 .container_imagem {
@@ -153,7 +153,6 @@ label #btnSidebarMenu:hover {
   margin-left: 250px;
   height: 100%;
   transition: 0.5s;
-  display: flex;
   align-items: center;
 }
 
@@ -185,6 +184,7 @@ label #btnSidebarMenu:hover {
     height: 120vh;
   }
 
+
 }
 
 @media screen and (max-height: 400px) {
@@ -202,6 +202,5 @@ label #btnSidebarMenu:hover {
     margin-top: 8%;
     height: 120vh;
   }
-
 
 }

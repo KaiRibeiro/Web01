@@ -5,16 +5,14 @@ html,
 body {
   height: 100%;
   font-family: "Roboto", sans-serif !important;
-  background: #1f302e;
+  overflow: hidden;
 }
 
 header {
   z-index: 2;
-  position: fixed;
+  position: relative;
   top: 0;
-  width: 100%;
-  overflow: hidden;
-  display: inline-block;
+  width: calc(100% - 0%);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -53,7 +51,7 @@ header {
 }
 
 .btnSair:hover {
-  background-color: rgb(184, 15, 15);
+  background: rgb(128, 11, 11);
 }
 
 .container_imagem {
@@ -78,14 +76,18 @@ header {
   overflow-y: auto;
 }
 
-.sidebar .container_imagem .imgPerfil {
+.imgPerfil {
   width: 100px;
   height: 100px;
   border-radius: 100px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.sidebar .container_imagem h4 {
+.container_imagem h4 {
   color: white;
   margin-top: 0;
   margin-bottom: 20px;
@@ -151,9 +153,6 @@ label #btnSidebarMenu:hover {
   margin-left: 250px;
   height: 100%;
   transition: 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #btnMenu:checked ~ .conteudo {
@@ -169,43 +168,100 @@ label #btnSidebarMenu:hover {
 }
 
 .formContato {
-    width: 40%;
-    height: 60%;
     text-align: center;
-    overflow: auto;
-    background: url("/assets/img/contacto_back.jpg") no-repeat center center;
+    background: url("/assets/img/contact_back.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    margin: 5%;
 }
+
 
 .formContato button {
   background: red;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.formContato button:hover {
+  background: rgb(128, 11, 11);
 }
 
 .formContato h2 {
   font-family: "Chakra Petch" !important;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px red;
 }
 
+
 .infoContato {
-  height: 65%;
-  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: auto;
+  margin-bottom: 69px;
+  margin-right: 13px;
 }
+
 
 .infoContato i {
   padding: 10px;
   font-size: 30px;
 }
 
-
-
-
 .titleContato {
   font-family: "Chakra Petch" !important;
+  text-shadow: 0 0 4px red;
+}
+
+@media screen and (max-width: 760px) {
+  html,
+  body { 
+    overflow-y: auto;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+  }
+
+  .conteudo {
+    margin-top: 15%;
+    height: 120vh;
+  }
+
+  .infoContato {
+    margin: 0%;
+  }
+
+  .formContato {
+    margin: 0%;
+  }
+
+}
+
+@media screen and (max-height: 400px) {
+  html,
+  body { 
+    overflow-y: auto;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+  }
+
+  .conteudo {
+    margin-top: 8%;
+    height: 120vh;
+  }
+
+  .infoContato {
+    margin: 0%;
+  }
 
 }

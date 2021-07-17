@@ -19,12 +19,11 @@
   <input type="checkbox" id="btnMenu" />
   <!---Headeeeer------>
   <header class="bg-dark border border-danger">
-    <h4 class="position-absolute top-50 start-50 translate-middle text-white">Contato</h3>
       <label for="btnMenu">
         <i class="bi bi-list" id="btnSidebarMenu"></i>
       </label>
       <div class="area_esquerda">
-        <h3 class="h1 mb-3 fw-bold">pwn<span>Watcher</span></h3>
+        <h3 class="mb-3 fw-bold">pwn<span>Watcher</span></h3>
       </div>
       <div class="area_direita">
         <a href="./login.html" class="btnSair">Sair</a>
@@ -46,30 +45,30 @@
   </div>
   <!--Sidebar-->
 
-  <!--Cards do dashboard, pegar quantidade banco-->
-  <div class="conteudo">
+  <div class="conteudo row justify-content-md-center">
 
 
-    <form class="formContato text-dark bg-white rounded-3 border border-danger">
-      <h2 class="mt-4 text-white">Mande Uma Mensagem</h2>
+    <form class="formContato col text-dark bg-white rounded-3 border border-danger">
+      <h2 class="text-white fw-bold mt-2">Mande Uma Mensagem</h2>
       <div class="form-group">
-        <input type="email" class="form-control mt-5 w-75 position-relative top-50 start-50 translate-middle" id="iptEmail" placeholder="usuario@email.com">
+        <input type="email" class="form-control mt-2" id="iptEmail" placeholder="usuario@email.com">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control mt-4 w-75 position-relative top-50 start-50 translate-middle" id="iptAssunto" placeholder="Assunto">
+        <input type="text" class="form-control mt-2" id="iptAssunto" placeholder="Assunto">
       </div>
       <div class="form-group">
-        <textarea class="form-control mt-4" id="exampleFormControlTextarea1" rows="5" placeholder="Mensagem"></textarea>
+        <textarea class="form-control mt-2" id="iptMensagem" rows="5" placeholder="Mensagem"></textarea>
       </div>
-      <button type="submit" class="btn text-white mt-4">Submit</button>
+      <button type="submit" class="w-50 btn btn-lg text-white fw-bold mt-2">Enviar</button>
     </form>
-    <div class="infoContato text-white bg-dark rounded-3 text-center border border-danger">
-      <h2 class="titleContato mt-3 mb-4">Entre em contato</h2>
+    
+    <div class="infoContato col-md-5 text-white bg-dark rounded-3 text-center border border-danger">
+      <h2 class="titleContato mt-2">Entre em contato</h2>
       <i class="bi bi-geo-alt"><span class="lead fw-bold"> Endereço:</span></i>
-        <span class="mb-4">Rua Inexistência 01, Bairro Vazio - Nenhum - Brasil</span>
+        <span>Rua Inexistência 01, Bairro Vazio - Nenhum - Brasil</span>
       <i class="bi bi-telephone"><span class="lead fw-bold"> Telefone:</span></i>
-        <span class="mb-4">+55 (00) 99999-9999</span>
-      <i class="bi bi-telephone"><span class="lead fw-bold"> Email:</span></i>
+        <span>+55 (00) 99999-9999</span>
+      <i class="bi bi-envelope"><span class="lead fw-bold"> Email:</span></i>
         <span>atendimento@pwnwatcher.net</span>  
     </div>
 

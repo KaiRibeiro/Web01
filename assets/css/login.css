@@ -91,3 +91,12 @@ main p {
 #iptSenha {
   margin-top: 10%;
 }
+
+.btn {
+  background: red;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: rgb(128, 11, 11);
+}
