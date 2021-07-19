@@ -172,19 +172,18 @@ label #btnSidebarMenu:hover {
 }
 
 .formContato {
-    text-align: center;
-    background: url("/assets/img/contact_back.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: auto;
-    margin: 6%;
+  text-align: center;
+  background: url("/assets/img/contact_back.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  margin: 6%;
 }
-
 
 .formContato button {
   background: red;
@@ -202,7 +201,6 @@ label #btnSidebarMenu:hover {
   text-shadow: 0 0 4px red;
 }
 
-
 .infoContato {
   display: flex;
   flex-direction: column;
@@ -210,7 +208,6 @@ label #btnSidebarMenu:hover {
   margin-bottom: 69px;
   margin-right: 13px;
 }
-
 
 .infoContato i {
   padding: 10px;
@@ -224,7 +221,7 @@ label #btnSidebarMenu:hover {
 
 @media screen and (max-width: 760px) {
   html,
-  body { 
+  body {
     overflow-y: auto;
   }
 
@@ -245,12 +242,11 @@ label #btnSidebarMenu:hover {
   .formContato {
     margin: 0%;
   }
-
 }
 
 @media screen and (max-height: 400px) {
   html,
-  body { 
+  body {
     overflow-y: auto;
   }
 
@@ -267,5 +263,4 @@ label #btnSidebarMenu:hover {
   .infoContato {
     margin: 0%;
   }
-
 }

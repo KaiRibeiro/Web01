@@ -1,431 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta https-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-      async
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <link href="./assets/css/relatorios.css" type="text/css" rel="stylesheet" />
-    <title>Relatórios - pwnWatcher</title>
-  </head>
-  <body>
-    <input type="checkbox" id="btnMenu" />
-    <!---Headeeeer------>
-    <header class="bg-dark border border-danger">
-      <label for="btnMenu">
-        <i class="bi bi-list" id="btnSidebarMenu"></i>
-      </label>
-      <div class="area_esquerda">
-        <h3 class="mb-3 fw-bold">pwn<span>Watcher</span></h3>
-      </div>
-      <div class="area_direita">
-        <a href="./login.html" class="btnSair">Sair</a>
-      </div>
-    </header>
-    <!---Headeeeer------>
 
-    <!--Sidebar-->
-    <div class="sidebar border border-danger">
-      <!--Pegar do Banco depois-->
-      <div class="container_imagem">
-        <img
-          src="./assets/img/usuario.jpg"
-          class="imgPerfil"
-          alt="Foto de perfil do Usuário"
-        />
-        <h4>Kaique C.</h4>
-      </div>
-      <a href="./dashboard.html"
-        ><i class="bi bi-columns"></i><span>Dashboard</span></a
-      >
-      <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
-      <a class="active" href="./relatorios.html"
-        ><i class="bi bi-clipboard"></i><span>Relatórios</span></a
-      >
-      <a href="./contato.html"
-        ><i class="bi bi-envelope"></i><span>Contato</span></a
-      >
+<head>
+  <meta charset="UTF-8" />
+  <meta https-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"
+    async></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link href="./assets/css/relatorios.css" type="text/css" rel="stylesheet" />
+  <title>Relatórios - pwnWatcher</title>
+</head>
+
+<body>
+  <input type="checkbox" id="btnMenu" />
+  <!---Headeeeer------>
+  <header class="bg-dark border border-danger">
+    <label for="btnMenu">
+      <i class="bi bi-list" id="btnSidebarMenu"></i>
+    </label>
+    <div class="area_esquerda">
+      <h3 class="mb-3 fw-bold">pwn<span>Watcher</span></h3>
     </div>
-    <!--Sidebar-->
-
-<!-- Formulario Novo Host -->
-<div id="formNovoRelatorio" class="modal">
-
-  <!-- Conteudo Formulario -->
-  <div class="modal-content border border-danger">
-    <div class="modal-header text-center mb-3">
-      <span class="close"><i class="bi bi-x-lg"></i></span>
+    <div class="area_direita">
+      <a href="./login.html" class="btnSair">Sair</a>
     </div>
-    <form>
-      <h2 class="mb-3 fw-bold text-center">Novo Relatório</h2>
-      <button type="submit" class="btn btn-danger fw-bold btnSalvar">+ Salvar</button>
-      <div class="form-group mb-3">
-        <label for="iptNomeRelatorio" class="fw-bold">Nome do Relatório<span class="text-danger"> *</span></label>
-        <input id="iptNomeRelatorio" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
-        <label for="iptNomeRelatorio" class="tmMax text-danger">Max. Caracteres 40</label>
+  </header>
+  <!---Headeeeer------>
+
+  <!--Sidebar-->
+  <div class="sidebar border border-danger">
+    <!--Pegar do Banco depois-->
+    <div class="container_imagem">
+      <img src="./assets/img/usuario.jpg" class="imgPerfil" alt="Foto de perfil do Usuário" />
+      <h4>Kaique C.</h4>
+    </div>
+    <a href="./dashboard.html"><i class="bi bi-columns"></i><span>Dashboard</span></a>
+    <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
+    <a class="active" href="./relatorios.html"><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
+    <a href="./contato.html"><i class="bi bi-envelope"></i><span>Contato</span></a>
+  </div>
+  <!--Sidebar-->
+
+  <!-- Formulario Novo Host -->
+  <div id="formNovoRelatorio" class="modal">
+
+    <!-- Conteudo Formulario -->
+    <div class="modal-content border border-danger">
+      <div class="modal-header text-center mb-3">
+        <span class="close"><i class="bi bi-x-lg"></i></span>
       </div>
-      <div class="form-group mb-3">
-        <label for="selHost" class="fw-bold">Host</label>
-        <input class="form-control" list="listHosts" id="selHost" placeholder="Digite o nome...">
-        <datalist id="listHosts">
-          <option value="Host 1">
-          <option value="Host 2">
-          <option value="Host 3">
-          <option value="Host 4">
-          <option value="Host 5">
-        </datalist>
-      </div>
-      <div class="form-group mb-3">
-        <label for="txtResuRelatorio" class="fw-bold">Resumo</label>
-        <textarea class="form-control" id="txtResuRelatorio" rows="3" maxlength="500"></textarea>
-        <label for="txtResuRelatorio" class="tmMax text-danger">Max. Caracteres 500</label>
-      </div>
-      <div class="form-group mb-3">
-        <label for="txtIndica" class="fw-bold">Indicações</label>
-        <textarea class="form-control" id="txtIndica" rows="3" maxlength="500"></textarea>
-        <label for="txtIndica" class="tmMax text-danger">Max. Caracteres 500</label>
-      </div>
-      </div>
+      <form id="formValuesRelatorio" onsubmit="return addRelatorio()">
+        <h2 class="mb-3 fw-bold text-center">Novo Relatório</h2>
+        <button type="submit" class="btn btn-danger fw-bold btnSalvar" id="btnSalvar">+ Salvar</button>
+        <div class="form-group mb-3">
+          <label for="iptNomeRelatorio" class="fw-bold">Nome do Relatório<span class="text-danger"> *</span></label>
+          <input id="iptNomeRelatorio" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40"
+            required>
+          <label for="iptNomeRelatorio" class="tmMax text-danger">Max. Caracteres 40</label>
+        </div>
+        <div class="form-group mb-3">
+          <label for="selHost" class="fw-bold">Host</label>
+          <input class="form-control" list="listHosts" id="selHost" placeholder="Digite o nome..." required>
+          <datalist id="listHosts">
+            <option value="Host 1">
+            <option value="Host 2">
+            <option value="Host 3">
+            <option value="Host 4">
+            <option value="Host 5">
+          </datalist>
+        </div>
+        <div class="form-group mb-3">
+          <label for="txtResuRelatorio" class="fw-bold">Resumo</label>
+          <textarea class="form-control" id="txtResuRelatorio" rows="3" maxlength="500"></textarea>
+          <label for="txtResuRelatorio" class="tmMax text-danger">Max. Caracteres 500</label>
+        </div>
+        <div class="form-group mb-3">
+          <label for="txtIndica" class="fw-bold">Indicações</label>
+          <textarea class="form-control" id="txtIndica" rows="3" maxlength="500"></textarea>
+          <label for="txtIndica" class="tmMax text-danger">Max. Caracteres 500</label>
+        </div>
+    </div>
     </form>
   </div>
 
-</div>
-<!-- Formulario Novo Host -->
+  </div>
+  <!-- Formulario Novo Host -->
 
 
-    <div class="conteudo row justify-content-md-center">
-      <!--Listagem-->
-      <div class="table-responsive-sm col-md-4">
-        <button
-          type="button"
-          class="btn btn-lg text-white fw-bold"
-          id="btnNovoRelatorio""
+  <div class="conteudo row justify-content-md-center">
+    <!--Listagem-->
+    <div class="table-responsive-sm col-md-4">
+      <button type="button" class="btn btn-lg text-white fw-bold" id="btnNovoRelatorio""
         >
           + Novo Relatório
         </button>
         <table
-          class="
-            table table-striped table-hover table-sm
-            align-text-bottom
-            text-center
-          "
-          id="tableHosts"
-        >
-          <thead class="table-dark text-center">
-            <th>Nome</th>
-            <th>Host</th>
-            <th>Status</th>
-            <th>Última Modificação</th>
-            <th></th>
-          </thead>
+          class=" table table-striped table-hover table-sm align-text-bottom text-center "
+          id=" tableRelatorios">
+        <thead class="table-dark text-center">
+          <th>Nome</th>
+          <th>Host</th>
+          <th>Status</th>
+          <th>Última Modificação</th>
+          <th></th>
+        </thead>
 
-          <tbody class="table-light">
-            <tr>
-              <td>Relatório Teste</td>
-              <td>20.125.209.214</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Relatório Pentest</td>
-              <td>192.168.1.1</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Relatório 04</td>
-              <td>108.177.16.0</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Contrato 01232190</td>
-              <td>https://www.site.com.br/</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Exploit 34</td>
-              <td>142.250.220.0</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Relatório OpenBSD</td>
-              <td>53.60.228.0</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Solaris Pentest</td>
-              <td>88.224.246.17</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Relatorio Host 12</td>
-              <td>239.181.92.65</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Relatorio 123</td>
-              <td>69.236.0.69</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Impressao 02</td>
-              <td>24.94.82.228</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)"
-                        >Remover</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+        <tbody class="table-light">
+          <tr>
+            <td>Relatório Teste</td>
+            <td>20.125.209.214</td>
+            <td>Aguardando Geração</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Relatório Pentest</td>
+            <td>192.168.1.1</td>
+            <td>Aguardando Geração</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Relatório 04</td>
+            <td>108.177.16.0</td>
+            <td>Gerado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Contrato 01232190</td>
+            <td>https://www.site.com.br/</td>
+            <td>Gerado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Exploit 34</td>
+            <td>142.250.220.0</td>
+            <td>Aguardando Geração</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Relatório OpenBSD</td>
+            <td>53.60.228.0</td>
+            <td>Gerado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Solaris Pentest</td>
+            <td>88.224.246.17</td>
+            <td>Aguardando Geração</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Relatorio Host 12</td>
+            <td>239.181.92.65</td>
+            <td>Gerado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Relatorio 123</td>
+            <td>69.236.0.69</td>
+            <td>Aguardando Geração</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Impressao 02</td>
+            <td>24.94.82.228</td>
+            <td>Gerado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerRelatorio(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
         </table>
         <!--Listagem-->
 
@@ -453,12 +358,9 @@
           </ul>
         </nav>
         <!--Paginação Hosts-->
-      </div>
     </div>
-    <script
-      type="text/javascript"
-      src="./assets/js/relatorios.js"
-      async
-    ></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="./assets/js/relatorios.js" async></script>
+</body>
+
 </html>

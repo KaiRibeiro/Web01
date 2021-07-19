@@ -14,12 +14,10 @@ function addHost() {
   //Gerar Data
   const date = new Date();
   var mes = date.getMonth() + 1;
-  
+
   //Copiar botao de opcoes
   var btnOpcoes = document.getElementById("btnOption");
   var btnClone = btnOpcoes.cloneNode(true);
-
-
 
   //Pega a tabela e adiciona a linha e colunas
   var tabela = document.getElementById("tableHosts");
@@ -41,21 +39,17 @@ function addHost() {
   return false;
 }
 
-
 var form = document.getElementById("formNovoHost");
 var btnAdd = document.getElementById("btnNovoHost");
 var btnFechar = document.getElementsByClassName("close")[0];
-var btnSalvar = document.getElementById("btnSalvar");
 
 btnAdd.onclick = function () {
-    form.style.display = "flex";
-    form.style.alignItems = "center";
-    form.style.justifyContent = "center";
+  form.style.display = "flex";
+  form.style.alignItems = "center";
+  form.style.justifyContent = "center";
 };
 
 btnFechar.onclick = function () {
-    form.style.display = "none";
-    document.getElementById("formValuesHosts").reset();
-  };
-
-
+  form.style.display = "none";
+  document.getElementById("formValuesHosts").reset();
+};

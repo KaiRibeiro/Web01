@@ -1,428 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta https-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-      async
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <link href="./assets/css/hosts.css" type="text/css" rel="stylesheet" />
-    <title>Hosts - pwnWatcher</title>
-  </head>
-  <body>
-    <input type="checkbox" id="btnMenu" />
-    <!---Headeeeer------>
-    <header class="bg-dark border border-danger">
-      <label for="btnMenu">
-        <i class="bi bi-list" id="btnSidebarMenu"></i>
-      </label>
-      <div class="area_esquerda">
-        <h3 class="mb-3 fw-bold">pwn<span>Watcher</span></h3>
-      </div>
-      <div class="area_direita">
-        <a href="./login.html" class="btnSair">Sair</a>
-      </div>
-    </header>
-    <!---Headeeeer------>
 
-    <!--Sidebar-->
-    <div class="sidebar border border-danger">
-      <!--Pegar do Banco depois-->
-      <div class="container_imagem">
-        <img
-          src="./assets/img/usuario.jpg"
-          class="imgPerfil"
-          alt="Foto de perfil do Usuário"
-        />
-        <h4>Kaique C.</h4>
-      </div>
-      <a href="./dashboard.html"
-        ><i class="bi bi-columns"></i><span>Dashboard</span></a
-      >
-      <a class="active" href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
-      <a href="./relatorios.html"><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
-      <a href="./contato.html"
-        ><i class="bi bi-envelope"></i><span>Contato</span></a
-      >
+<head>
+  <meta charset="UTF-8" />
+  <meta https-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"
+    async></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link href="./assets/css/hosts.css" type="text/css" rel="stylesheet" />
+  <title>Hosts - pwnWatcher</title>
+</head>
+
+<body>
+  <input type="checkbox" id="btnMenu" />
+  <!---Headeeeer------>
+  <header class="bg-dark border border-danger">
+    <label for="btnMenu">
+      <i class="bi bi-list" id="btnSidebarMenu"></i>
+    </label>
+    <div class="area_esquerda">
+      <h3 class="mb-3 fw-bold">pwn<span>Watcher</span></h3>
     </div>
-    <!--Sidebar-->
-
-<!-- Formulario Novo Host -->
-<div id="formNovoHost" class="modal">
-
-  <!-- Conteudo Formulario -->
-  <div class="modal-content border border-danger">
-    <div class="modal-header text-center mb-3">
-      <span class="close"><i class="bi bi-x-lg"></i></span>
+    <div class="area_direita">
+      <a href="./login.html" class="btnSair">Sair</a>
     </div>
-    <form id="formValuesHosts" onsubmit="return addHost()">
-      <h2 class="mb-3 fw-bold text-center">Novo Host</h2>
-      <button type="submit" class="btn btn-danger fw-bold btnSalvar" id="btnSalvar">+ Salvar</button>
-      <div class="form-group mb-3">
-        <label for="iptNomeHost" class="fw-bold">Nome do Host<span class="text-danger"> *</span></label>
-        <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
-        <label for="iptNomeHost" class="tmMax text-danger">Max. Caracteres 40</label>
-      </div>
-      <div class="form-group mb-3">
-        <label for="iptSoHost" class="fw-bold">Sistema Operacional<span class="text-danger"> *</span></label>
-        <input id="iptSoHost" type="text" class="form-control" placeholder="Linux" maxlength="40" required>
-        <label for="iptSoHost" class="tmMax text-danger">Max. Caracteres 40</label>
-      </div>
-      <div class="form-group mb-3">
-        <label for="txtDescriHost" class="fw-bold">Descrição</label>
-        <textarea class="form-control" id="txtDescriHost" rows="3" maxlength="500"></textarea>
-        <label for="txtDescriHost" class="tmMax text-danger">Max. Caracteres 500</label>
-      </div>
-      <div class="form-group mb-3">
-        <label for="selVulne" class="fw-bold">Vulnerabilidade</label>
-        <select class="form-select" id="selVulne">
-          <option value="1">Selecionar</option>
-          <option value="2">Software Desatualizado</option>
-          <option value="3">Configuração Incorreta</option>
-          <option value="4">Credencias Fracas</option>
-          <option value="5">Phishing</option>
-          <option value="6">Agente Interno</option>
-          <option value="7">Outro</option>
-        </select>
-      </div>
-      <div class="form-group mb-3">
-        <label for="txtDescriVuln" class="fw-bold">Descrição da Vulnerabilidade</label>
-        <textarea class="form-control" id="txtDescriVuln" rows="3" maxlength="500"></textarea>
-        <label for="txtDescriVuln" class="tmMax text-danger">Max. Caracteres 500</label>
-      </div>
-      <div class="form-group">
-        <label for="chkSeveridade" class="fw-bold">Severidade da Vulnerabilidade</label>
-        <div id="chkSeveridade" class="form-control btn-group btn-group-toggle row" data-toggle="buttons">
-          <label class="btn btn-secondary text-dark">
-            <input type="radio" name="options" id="chkSevNA" autocomplete="off"> N/A
-          </label>
-          <label class="btn btn-success text-dark">
-            <input type="radio" name="options" id="chSevBaixa" autocomplete="off"> Baixa
-          </label>
-          <label class="btn btn-warning text-dark">
-            <input type="radio" name="options" id="chSevMedia" autocomplete="off"> Média
-          </label>
-          <label class="btn btn-danger text-dark">
-            <input type="radio" name="options" id="chSevAlta" autocomplete="off"> Alta
-          </label>
-        </div>
-      </div>
-    </form>
+  </header>
+  <!---Headeeeer------>
+
+  <!--Sidebar-->
+  <div class="sidebar border border-danger">
+    <!--Pegar do Banco depois-->
+    <div class="container_imagem">
+      <img src="./assets/img/usuario.jpg" class="imgPerfil" alt="Foto de perfil do Usuário" />
+      <h4>Kaique C.</h4>
+    </div>
+    <a href="./dashboard.html"><i class="bi bi-columns"></i><span>Dashboard</span></a>
+    <a class="active" href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
+    <a href="./relatorios.html"><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
+    <a href="./contato.html"><i class="bi bi-envelope"></i><span>Contato</span></a>
   </div>
+  <!--Sidebar-->
 
-</div>
-<!-- Formulario Novo Host -->
+  <!-- Formulario Novo Host -->
+  <div id="formNovoHost" class="modal">
+
+    <!-- Conteudo Formulario -->
+    <div class="modal-content border border-danger">
+      <div class="modal-header text-center mb-3">
+        <span class="close"><i class="bi bi-x-lg"></i></span>
+      </div>
+      <form id="formValuesHosts" onsubmit="return addHost()">
+        <h2 class="mb-3 fw-bold text-center">Novo Host</h2>
+        <button type="submit" class="btn btn-danger fw-bold btnSalvar" id="btnSalvar">+ Salvar</button>
+        <div class="form-group mb-3">
+          <label for="iptNomeHost" class="fw-bold">Nome do Host<span class="text-danger"> *</span></label>
+          <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
+          <label for="iptNomeHost" class="tmMax text-danger">Max. Caracteres 40</label>
+        </div>
+        <div class="form-group mb-3">
+          <label for="iptSoHost" class="fw-bold">Sistema Operacional<span class="text-danger"> *</span></label>
+          <input id="iptSoHost" type="text" class="form-control" placeholder="Linux" maxlength="40" required>
+          <label for="iptSoHost" class="tmMax text-danger">Max. Caracteres 40</label>
+        </div>
+        <div class="form-group mb-3">
+          <label for="txtDescriHost" class="fw-bold">Descrição</label>
+          <textarea class="form-control" id="txtDescriHost" rows="3" maxlength="500"></textarea>
+          <label for="txtDescriHost" class="tmMax text-danger">Max. Caracteres 500</label>
+        </div>
+        <div class="form-group mb-3">
+          <label for="selVulne" class="fw-bold">Vulnerabilidade</label>
+          <select class="form-select" id="selVulne">
+            <option value="1">Selecionar</option>
+            <option value="2">Software Desatualizado</option>
+            <option value="3">Configuração Incorreta</option>
+            <option value="4">Credencias Fracas</option>
+            <option value="5">Phishing</option>
+            <option value="6">Agente Interno</option>
+            <option value="7">Outro</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label for="txtDescriVuln" class="fw-bold">Descrição da Vulnerabilidade</label>
+          <textarea class="form-control" id="txtDescriVuln" rows="3" maxlength="500"></textarea>
+          <label for="txtDescriVuln" class="tmMax text-danger">Max. Caracteres 500</label>
+        </div>
+        <div class="form-group">
+          <label for="chkSeveridade" class="fw-bold">Severidade da Vulnerabilidade</label>
+          <div id="chkSeveridade" class="form-control btn-group btn-group-toggle row" data-toggle="buttons">
+            <label class="btn btn-secondary text-dark">
+              <input type="radio" name="options" id="chkSevNA" autocomplete="off"> N/A
+            </label>
+            <label class="btn btn-success text-dark">
+              <input type="radio" name="options" id="chSevBaixa" autocomplete="off"> Baixa
+            </label>
+            <label class="btn btn-warning text-dark">
+              <input type="radio" name="options" id="chSevMedia" autocomplete="off"> Média
+            </label>
+            <label class="btn btn-danger text-dark">
+              <input type="radio" name="options" id="chSevAlta" autocomplete="off"> Alta
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <!-- Formulario Novo Host -->
 
 
 
-    <div class="conteudo row justify-content-md-center">
-      <!--Listagem-->
-      <div class="table-responsive-sm col-md-4">
-        <button type="button" id="btnNovoHost" class="btn btn-lg text-white fw-bold"">
+  <div class="conteudo row justify-content-md-center">
+    <!--Listagem-->
+    <div class="table-responsive-sm col-md-4">
+      <button type="button" id="btnNovoHost" class="btn btn-lg text-white fw-bold"">
           + Novo Host
         </button>
         <table
-          class="
-            table table-striped table-hover table-sm
-            align-text-bottom
-            text-center
-          "
-          id="tableHosts"
-        >
-          <thead class="table-dark text-center">
-            <th>Nome</th>
-            <th>Sistema</th>
-            <th>Status</th>
-            <th>Última Modificação</th>
-            <th></th>
-          </thead>
+          class=" table table-striped table-hover table-sm align-text-bottom text-center "
+          id=" tableHosts">
+        <thead class="table-dark text-center">
+          <th>Nome</th>
+          <th>Sistema</th>
+          <th>Status</th>
+          <th>Última Modificação</th>
+          <th></th>
+        </thead>
 
-          <tbody class="table-light">
-            <tr>
-              <td>199.173.61.254</td>
-              <td>OpenBSD</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart" id="btnOption">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>85.54.219.231</td>
-              <td>Linux</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>20.125.209.214</td>
-              <td>Solaris</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>https://www.site.com.br/</td>
-              <td>Linux</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>99.172.152.66</td>
-              <td>Windows 7</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>53.60.228.0</td>
-              <td>OpenBSD</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>88.224.246.17</td>
-              <td>Solaris</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>109.156.35.113</td>
-              <td>OpenBSD</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>197.244.251.240</td>
-              <td>Windows 10</td>
-              <td>Aberto</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>216.149.164.191</td>
-              <td>Linux</td>
-              <td>Finalizado</td>
-              <td>2021/7/10</td>
-              <td>
-                <div class="dropdown dropstart">
-                  <button
-                    class="btn btn-dark btnOpcoes"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-three-dots"></i>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Editar</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+        <tbody class="table-light">
+          <tr>
+            <td>199.173.61.254</td>
+            <td>OpenBSD</td>
+            <td>Aberto</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption">
+                <button class="btn btn-dark btnOpcoes" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>85.54.219.231</td>
+            <td>Linux</td>
+            <td>Aberto</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>20.125.209.214</td>
+            <td>Solaris</td>
+            <td>Finalizado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>https://www.site.com.br/</td>
+            <td>Linux</td>
+            <td>Finalizado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>99.172.152.66</td>
+            <td>Windows 7</td>
+            <td>Aberto</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>53.60.228.0</td>
+            <td>OpenBSD</td>
+            <td>Finalizado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>88.224.246.17</td>
+            <td>Solaris</td>
+            <td>Aberto</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>109.156.35.113</td>
+            <td>OpenBSD</td>
+            <td>Finalizado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>197.244.251.240</td>
+            <td>Windows 10</td>
+            <td>Aberto</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>216.149.164.191</td>
+            <td>Linux</td>
+            <td>Finalizado</td>
+            <td>2021/7/10</td>
+            <td>
+              <div class="dropdown dropstart" id="btnOption"> <button class="btn btn-dark btnOpcoes" type="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+                  <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
         </table>
         <!--Listagem-->
 
@@ -450,8 +379,9 @@
           </ul>
         </nav>
         <!--Paginação Hosts-->
-      </div>
     </div>
-    <script type="text/javascript" src="./assets/js/hosts.js"></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="./assets/js/hosts.js"></script>
+</body>
+
 </html>

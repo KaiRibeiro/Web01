@@ -257,6 +257,10 @@ tr {
   animation-duration: 0.4s;
 }
 
+.btnSalvar:hover {
+  background: rgb(128, 11, 11);
+}
+
 @-webkit-keyframes slideIn {
   from {
     bottom: -300px;
