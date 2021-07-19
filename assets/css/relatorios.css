@@ -162,11 +162,7 @@ label #btnSidebarMenu:hover {
   justify-content: center;
 }
 
-tr {
-  cursor: pointer;
-}
-
-.conteudo .btn-lg {
+.btn-lg {
   background: red;
   text-transform: uppercase;
   align-self: center;
@@ -219,113 +215,6 @@ tr {
   display: none;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 4;
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.modal-header {
-  padding: 2px 16px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: white;
-  margin: 5% 30% auto;
-  padding: 20px;
-  width: 50%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s;
-}
-
-@-webkit-keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    bottom: -300px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.modal-content textarea {
-  resize: none;
-}
-
-.modal-content .btn-group .btn {
-  width: 20%;
-}
-
-.btnSalvar {
-  width: 15%;
-  background: red;
-  text-transform: uppercase;
-  position: absolute;
-  top: 25px;
-  right: 25px;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  width: 20px;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.tmMax {
-  float: right;
-}
-
 @media screen and (max-width: 760px) {
   html,
   body {
@@ -340,20 +229,6 @@ tr {
   .conteudo {
     margin-top: 15%;
     height: 120vh;
-  }
-
-  .modal {
-    overflow: auto;
-  }
-
-  .modal-content .btn-group .btn {
-    width: 50%;
-  }
-
-  .btnSalvar {
-    width: 45%;
-    top: 2px;
-    right: 25px;
   }
 }
 
@@ -371,19 +246,5 @@ tr {
   .conteudo {
     margin-top: 8%;
     height: 120vh;
-  }
-
-  .modal {
-    overflow: auto;
-  }
-
-  .modal-content .btn-group .btn {
-    width: 50%;
-  }
-
-  .btnSalvar {
-    width: 45%;
-    top: 20px;
-    right: 25px;
   }
 }

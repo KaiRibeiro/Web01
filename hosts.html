@@ -8,6 +8,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
+      async
     ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -53,17 +54,85 @@
         ><i class="bi bi-columns"></i><span>Dashboard</span></a
       >
       <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
-      <a href=""><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
+      <a href="./relatorios.html"><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
       <a href="./contato.html"
         ><i class="bi bi-envelope"></i><span>Contato</span></a
       >
     </div>
     <!--Sidebar-->
 
+<!-- Formulario Novo Host -->
+<div id="formNovoHost" class="modal">
+
+  <!-- Conteudo Formulario -->
+  <div class="modal-content border border-danger">
+    <div class="modal-header text-center mb-3">
+      <span class="close"><i class="bi bi-x-lg"></i></span>
+    </div>
+    <form>
+      <h2 class="mb-3 fw-bold text-center">Novo Host</h2>
+      <button type="submit" class="btn btn-danger fw-bold btnSalvar">+ Salvar</button>
+      <div class="form-group mb-4">
+        <label for="iptNomeHost" class="fw-bold">Nome do Host<span class="text-danger"> *</span></label>
+        <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
+        <label for="iptNomeHost" class="tmMax text-danger">Max. Caracteres 40</label>
+      </div>
+      <div class="form-group mb-4">
+        <label for="iptSoHost" class="fw-bold">Sistema Operacional</label>
+        <input id="iptSoHost" type="text" class="form-control" placeholder="Linux" maxlength="40">
+        <label for="iptSoHost" class="tmMax text-danger">Max. Caracteres 40</label>
+      </div>
+      <div class="form-group mb-4">
+        <label for="txtDescriHost" class="fw-bold">Descrição</label>
+        <textarea class="form-control" id="txtDescriHost" rows="3" maxlength="500"></textarea>
+        <label for="txtDescriHost" class="tmMax text-danger">Max. Caracteres 500</label>
+      </div>
+      <div class="form-group mb-4">
+        <label for="selVulne" class="fw-bold">Vulnerabilidade</label>
+        <select class="form-select" id="selVulne">
+          <option value="1">Selecionar</option>
+          <option value="2">Software Desatualizado</option>
+          <option value="3">Configuração Incorreta</option>
+          <option value="4">Credencias Fracas</option>
+          <option value="5">Phishing</option>
+          <option value="6">Agente Interno</option>
+          <option value="7">Outro</option>
+        </select>
+      </div>
+      <div class="form-group mb-4">
+        <label for="txtDescriVuln" class="fw-bold">Descrição da Vulnerabilidade</label>
+        <textarea class="form-control" id="txtDescriVuln" rows="3" maxlength="500"></textarea>
+        <label for="txtDescriVuln" class="tmMax text-danger">Max. Caracteres 500</label>
+      </div>
+      <div class="form-group">
+        <label for="chkSeveridade" class="fw-bold">Severidade da Vulnerabilidade</label>
+        <div id="chkSeveridade" class="form-control btn-group btn-group-toggle row" data-toggle="buttons">
+          <label class="btn btn-secondary text-dark">
+            <input type="radio" name="options" id="chkSevNA" autocomplete="off"> N/A
+          </label>
+          <label class="btn btn-success text-dark">
+            <input type="radio" name="options" id="chSevBaixa" autocomplete="off"> Baixa
+          </label>
+          <label class="btn btn-warning text-dark">
+            <input type="radio" name="options" id="chSevMedia" autocomplete="off"> Média
+          </label>
+          <label class="btn btn-danger text-dark">
+            <input type="radio" name="options" id="chSevAlta" autocomplete="off"> Alta
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+<!-- Formulario Novo Host -->
+
+
+
     <div class="conteudo row justify-content-md-center">
       <!--Listagem-->
       <div class="table-responsive-sm col-md-4">
-        <button type="button" class="btn btn-lg text-white fw-bold">
+        <button type="button" id="btnNovoHost" class="btn btn-lg text-white fw-bold"">
           + Novo Host
         </button>
         <table

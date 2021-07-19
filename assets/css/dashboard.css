@@ -170,7 +170,7 @@ label #btnSidebarMenu:hover {
 
 @media screen and (max-width: 760px) {
   html,
-  body { 
+  body {
     overflow-y: auto;
   }
 
@@ -183,13 +183,11 @@ label #btnSidebarMenu:hover {
     margin-top: 15%;
     height: 120vh;
   }
-
-
 }
 
 @media screen and (max-height: 400px) {
   html,
-  body { 
+  body {
     overflow-y: auto;
   }
 
@@ -202,5 +200,4 @@ label #btnSidebarMenu:hover {
     margin-top: 8%;
     height: 120vh;
   }
-
 }

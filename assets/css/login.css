@@ -50,7 +50,7 @@ body {
   color: white;
 }
 
-.formulario-login .form-floating:focus-within {
+.formulario-login .form-group:focus-within {
   z-index: 2;
 }
 
@@ -86,10 +86,6 @@ main h1 span {
 main p {
   color: white;
   text-align: center;
-}
-
-#iptSenha {
-  margin-top: 10%;
 }
 
 .btn {
