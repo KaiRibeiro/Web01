@@ -9,7 +9,9 @@ var btnAdd = document.getElementById("btnNovoHost");
 var btnFechar = document.getElementsByClassName("close")[0];
 
 btnAdd.onclick = function () {
-    form.style.display = "block";
+    form.style.display = "flex";
+    form.style.alignItems = "center";
+    form.style.justifyContent = "center";
 };
 
 btnFechar.onclick = function () {
