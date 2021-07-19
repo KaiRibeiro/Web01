@@ -54,7 +54,7 @@
         ><i class="bi bi-columns"></i><span>Dashboard</span></a
       >
       <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
-      <a href="./relatorios.html"
+      <a class="active" href="./relatorios.html"
         ><i class="bi bi-clipboard"></i><span>Relatórios</span></a
       >
       <a href="./contato.html"
@@ -63,15 +63,60 @@
     </div>
     <!--Sidebar-->
 
+<!-- Formulario Novo Host -->
+<div id="formNovoRelatorio" class="modal">
+
+  <!-- Conteudo Formulario -->
+  <div class="modal-content border border-danger">
+    <div class="modal-header text-center mb-3">
+      <span class="close"><i class="bi bi-x-lg"></i></span>
+    </div>
+    <form>
+      <h2 class="mb-3 fw-bold text-center">Novo Relatório</h2>
+      <button type="submit" class="btn btn-danger fw-bold btnSalvar">+ Salvar</button>
+      <div class="form-group mb-3">
+        <label for="iptNomeRelatorio" class="fw-bold">Nome do Relatório<span class="text-danger"> *</span></label>
+        <input id="iptNomeRelatorio" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
+        <label for="iptNomeRelatorio" class="tmMax text-danger">Max. Caracteres 40</label>
+      </div>
+      <div class="form-group mb-3">
+        <label for="selHost" class="fw-bold">Host</label>
+        <input class="form-control" list="listHosts" id="selHost" placeholder="Digite o nome...">
+        <datalist id="listHosts">
+          <option value="Host 1">
+          <option value="Host 2">
+          <option value="Host 3">
+          <option value="Host 4">
+          <option value="Host 5">
+        </datalist>
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtResuRelatorio" class="fw-bold">Resumo</label>
+        <textarea class="form-control" id="txtResuRelatorio" rows="3" maxlength="500"></textarea>
+        <label for="txtResuRelatorio" class="tmMax text-danger">Max. Caracteres 500</label>
+      </div>
+      <div class="form-group mb-3">
+        <label for="txtIndica" class="fw-bold">Indicações</label>
+        <textarea class="form-control" id="txtIndica" rows="3" maxlength="500"></textarea>
+        <label for="txtIndica" class="tmMax text-danger">Max. Caracteres 500</label>
+      </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+<!-- Formulario Novo Host -->
+
+
     <div class="conteudo row justify-content-md-center">
       <!--Listagem-->
       <div class="table-responsive-sm col-md-4">
         <button
           type="button"
           class="btn btn-lg text-white fw-bold"
-          onclick="addHost()"
+          id="btnNovoRelatorio""
         >
-          + Novo Host
+          + Novo Relatório
         </button>
         <table
           class="
@@ -82,7 +127,6 @@
           id="tableHosts"
         >
           <thead class="table-dark text-center">
-            <th>#</th>
             <th>Nome</th>
             <th>Host</th>
             <th>Status</th>
@@ -92,15 +136,14 @@
 
           <tbody class="table-light">
             <tr>
-              <th scope="row">1</th>
               <td>Relatório Teste</td>
               <td>20.125.209.214</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -108,7 +151,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -122,15 +165,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">2</th>
               <td>Relatório Pentest</td>
               <td>192.168.1.1</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -138,7 +180,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -152,15 +194,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">3</th>
               <td>Relatório 04</td>
-              <td>Solaris</td>
+              <td>108.177.16.0</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -168,7 +209,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -182,15 +223,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">4</th>
               <td>Contrato 01232190</td>
               <td>https://www.site.com.br/</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -198,7 +238,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -212,15 +252,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">5</th>
-              <td>99.172.152.66</td>
-              <td>Windows 7</td>
+              <td>Exploit 34</td>
+              <td>142.250.220.0</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -228,7 +267,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -242,15 +281,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">6</th>
+              <td>Relatório OpenBSD</td>
               <td>53.60.228.0</td>
-              <td>OpenBSD</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -258,7 +296,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -272,15 +310,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">7</th>
+              <td>Solaris Pentest</td>
               <td>88.224.246.17</td>
-              <td>Solaris</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -288,7 +325,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -302,15 +339,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">8</th>
-              <td>109.156.35.113</td>
-              <td>OpenBSD</td>
+              <td>Relatorio Host 12</td>
+              <td>239.181.92.65</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -318,7 +354,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -332,15 +368,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">9</th>
-              <td>197.244.251.240</td>
-              <td>Windows 10</td>
+              <td>Relatorio 123</td>
+              <td>69.236.0.69</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -348,7 +383,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>
@@ -362,15 +397,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">10</th>
-              <td>216.149.164.191</td>
-              <td>Linux</td>
+              <td>Impressao 02</td>
+              <td>24.94.82.228</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -378,7 +412,7 @@
                     <i class="bi bi-three-dots"></i>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
-                    <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                    <li><a class="dropdown-item" href="#">Gerar Relatório</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Editar</a>
                     </li>

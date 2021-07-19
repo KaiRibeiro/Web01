@@ -166,6 +166,15 @@ tr {
   cursor: pointer;
 }
 
+.btnOpcoes:hover {
+  background: red;
+  z-index: 2;
+}
+
+.active {
+  background: red;
+}
+
 .conteudo .btn-lg {
   background: red;
   text-transform: uppercase;

@@ -167,6 +167,10 @@ label #btnSidebarMenu:hover {
   display: none;
 }
 
+.active {
+  background: red;
+}
+
 .formContato {
     text-align: center;
     background: url("/assets/img/contact_back.jpg") no-repeat center center;

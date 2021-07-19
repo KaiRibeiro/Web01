@@ -53,7 +53,7 @@
       <a href="./dashboard.html"
         ><i class="bi bi-columns"></i><span>Dashboard</span></a
       >
-      <a href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
+      <a class="active" href="./hosts.html"><i class="bi bi-laptop"></i><span>Hosts</span></a>
       <a href="./relatorios.html"><i class="bi bi-clipboard"></i><span>Relatórios</span></a>
       <a href="./contato.html"
         ><i class="bi bi-envelope"></i><span>Contato</span></a
@@ -69,17 +69,17 @@
     <div class="modal-header text-center mb-3">
       <span class="close"><i class="bi bi-x-lg"></i></span>
     </div>
-    <form>
+    <form id="formValuesHosts" onsubmit="return addHost()">
       <h2 class="mb-3 fw-bold text-center">Novo Host</h2>
-      <button type="submit" class="btn btn-danger fw-bold btnSalvar">+ Salvar</button>
+      <button type="submit" class="btn btn-danger fw-bold btnSalvar" id="btnSalvar">+ Salvar</button>
       <div class="form-group mb-3">
         <label for="iptNomeHost" class="fw-bold">Nome do Host<span class="text-danger"> *</span></label>
         <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome" maxlength="40" required>
         <label for="iptNomeHost" class="tmMax text-danger">Max. Caracteres 40</label>
       </div>
       <div class="form-group mb-3">
-        <label for="iptSoHost" class="fw-bold">Sistema Operacional</label>
-        <input id="iptSoHost" type="text" class="form-control" placeholder="Linux" maxlength="40">
+        <label for="iptSoHost" class="fw-bold">Sistema Operacional<span class="text-danger"> *</span></label>
+        <input id="iptSoHost" type="text" class="form-control" placeholder="Linux" maxlength="40" required>
         <label for="iptSoHost" class="tmMax text-danger">Max. Caracteres 40</label>
       </div>
       <div class="form-group mb-3">
@@ -144,7 +144,6 @@
           id="tableHosts"
         >
           <thead class="table-dark text-center">
-            <th>#</th>
             <th>Nome</th>
             <th>Sistema</th>
             <th>Status</th>
@@ -154,15 +153,14 @@
 
           <tbody class="table-light">
             <tr>
-              <th scope="row">1</th>
               <td>199.173.61.254</td>
               <td>OpenBSD</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
-                <div class="dropdown dropstart">
+                <div class="dropdown dropstart" id="btnOption">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -182,15 +180,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">2</th>
               <td>85.54.219.231</td>
               <td>Linux</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -210,15 +207,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">3</th>
               <td>20.125.209.214</td>
               <td>Solaris</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -238,15 +234,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">4</th>
               <td>https://www.site.com.br/</td>
               <td>Linux</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -266,15 +261,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">5</th>
               <td>99.172.152.66</td>
               <td>Windows 7</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -294,15 +288,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">6</th>
               <td>53.60.228.0</td>
               <td>OpenBSD</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -322,15 +315,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">7</th>
               <td>88.224.246.17</td>
               <td>Solaris</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -350,15 +342,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">8</th>
               <td>109.156.35.113</td>
               <td>OpenBSD</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -378,15 +369,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">9</th>
               <td>197.244.251.240</td>
               <td>Windows 10</td>
               <td>Aberto</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -406,15 +396,14 @@
               </td>
             </tr>
             <tr>
-              <th scope="row">10</th>
               <td>216.149.164.191</td>
               <td>Linux</td>
               <td>Finalizado</td>
-              <td>2021/07/10</td>
+              <td>2021/7/10</td>
               <td>
                 <div class="dropdown dropstart">
                   <button
-                    class="btn btn-secondary bg-dark"
+                    class="btn btn-dark btnOpcoes"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
