@@ -145,7 +145,7 @@ label #btnSidebarMenu:hover {
 }
 
 .conteudo {
-  background: url("/assets/img/login_back.jpg") no-repeat center center fixed;
+  background: url("../img/login_back.webp") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -173,7 +173,7 @@ label #btnSidebarMenu:hover {
 
 .formContato {
   text-align: center;
-  background: url("/assets/img/contact_back.jpg") no-repeat center center;
+  background: url("../img/contact_back.webp") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
