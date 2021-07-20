@@ -16,7 +16,7 @@ function addHost() {
   var mes = date.getMonth() + 1;
 
   //Copiar botao de opcoes
-  var btnOpcoes = document.getElementById("btnOption");
+  var btnOpcoes = document.getElementById("btnOptionHidden");
   var btnClone = btnOpcoes.cloneNode(true);
 
   //Pega a tabela e adiciona a linha e colunas

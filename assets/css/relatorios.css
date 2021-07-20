@@ -164,7 +164,14 @@ label #btnSidebarMenu:hover {
 
 .btnOpcoes:hover {
   background: red;
-  z-index: 2;
+}
+
+.escondido {
+  display: none;
+}
+
+.btnOpcoesEscondido:hover {
+  background: red;
 }
 
 .active {

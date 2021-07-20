@@ -58,7 +58,8 @@
         <button type="submit" class="btn btn-danger fw-bold btnSalvar" id="btnSalvar">+ Salvar</button>
         <div class="form-group mb-3">
           <label for="iptNomeHost" class="fw-bold">Nome do Host<span class="text-danger"> *</span></label>
-          <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome..." maxlength="40" required>
+          <input id="iptNomeHost" type="text" class="form-control" placeholder="Exemplo Nome..." maxlength="40"
+            required>
           <label for="iptNomeHost" class="tmMax text-danger">Max. Caracteres 40</label>
         </div>
         <div class="form-group mb-3">
@@ -68,7 +69,8 @@
         </div>
         <div class="form-group mb-3">
           <label for="txtDescriHost" class="fw-bold">Descrição</label>
-          <textarea class="form-control" id="txtDescriHost" rows="3" maxlength="500" placeholder="Descrição do host..."></textarea>
+          <textarea class="form-control" id="txtDescriHost" rows="3" maxlength="500"
+            placeholder="Descrição do host..."></textarea>
           <label for="txtDescriHost" class="tmMax text-danger">Max. Caracteres 500</label>
         </div>
         <div class="form-group mb-3">
@@ -85,7 +87,8 @@
         </div>
         <div class="form-group mb-3">
           <label for="txtDescriVuln" class="fw-bold">Descrição da Vulnerabilidade</label>
-          <textarea class="form-control" id="txtDescriVuln" rows="3" maxlength="500" placeholder="Descrição Da Vulnerabilidade..."></textarea>
+          <textarea class="form-control" id="txtDescriVuln" rows="3" maxlength="500"
+            placeholder="Descrição Da Vulnerabilidade..."></textarea>
           <label for="txtDescriVuln" class="tmMax text-danger">Max. Caracteres 500</label>
         </div>
         <div class="form-group">
@@ -112,6 +115,25 @@
   <!-- Formulario Novo Host -->
 
 
+  <!--BotoãoOpcões Escondido-->
+  <div class="escondido">
+    <div class="dropdown dropstart" id="btnOptionHidden">
+      <button class="btn btn-dark btnOpcoesEscondido" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots"></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnOpcoes">
+        <li><a class="dropdown-item" href="#">Visualizar</a></li>
+        <li>
+          <a class="dropdown-item" href="#">Editar</a>
+        </li>
+        <li>
+          <a class="dropdown-item" onclick="removerHost(this)">Remover</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--BotoãoOpcões Escondido--->
+
 
   <div class="conteudo row justify-content-md-center">
     <!--Listagem-->
@@ -120,8 +142,7 @@
           + Novo Host
         </button>
         <table
-          class=" table table-striped table-hover table-sm align-text-bottom text-center "
-          id=" tableHosts">
+          class=" table table-striped table-hover table-sm align-text-bottom text-center" id="tableHosts">
         <thead class="table-dark text-center">
           <th>Nome</th>
           <th>Sistema</th>
